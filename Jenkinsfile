@@ -33,7 +33,7 @@ pipeline {
         
          stage('docker Upload') {
             steps {
-                sh "docker push jaibw/apidemo:${env.BUILD_NUMBER}"
+                sh "docker push poojag11/apidemo:${env.BUILD_NUMBER}"
             }
         }
          
