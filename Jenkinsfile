@@ -9,7 +9,7 @@ pipeline {
         stage('mvn Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/Jaibw/apiservice.git'
+                git branch: 'main', url: 'https://github.com/poojag11/apiservice.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn install -DskipTests=true"
@@ -21,7 +21,7 @@ pipeline {
         stage('docker Build') {
             steps {
                 sh 'cp target/OnlineVotingSystem-0.0.1-SNAPSHOT.jar deploy/OnlineVotingSystem-0.0.1-SNAPSHOT.jar'
-                sh "cd deploy && docker build -t jaibw/apidemo:${env.BUILD_NUMBER} ."
+                sh "cd deploy && docker build -t poojag11/apidemo:${env.BUILD_NUMBER} ."
             }
         }
         
