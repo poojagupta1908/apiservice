@@ -9,7 +9,7 @@ pipeline {
         stage('mvn Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/poojag11/apiservice.git'
+                git branch: 'main', url: 'https://github.com/poojagupta1908/apiservice.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn install -DskipTests=true"
